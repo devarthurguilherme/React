@@ -1,5 +1,10 @@
 import './App.css';
+//Images
 import Img_2 from './assets/img_2.jpg';
+//Components
+import ManageData from './components/ManageData';
+import ListRender from './components/ListRender';
+
 function App() {
   return (
     <div className="App">
@@ -11,6 +16,8 @@ function App() {
         <div>
           <img src={Img_2} alt="joysticks"/>
         </div>
+        <ManageData />
+        <ListRender />
       </div>
     </div>
   );
