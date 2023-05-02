@@ -16,7 +16,7 @@ const ListRender = () => {
 
         setUsers((prevUsers) => {
             console.log(prevUsers)
-            return prevUsers.filter((user) => randomNumber !== user.id)
+            return prevUsers.filter((user) => randomNumber !== user.id);
         })
    }
 

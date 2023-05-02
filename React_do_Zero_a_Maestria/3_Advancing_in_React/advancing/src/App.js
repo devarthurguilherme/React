@@ -4,6 +4,7 @@ import Img_2 from './assets/img_2.jpg';
 //Components
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
+import ConditionalRender from './components/ConditionalRender';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </div>
         <ManageData />
         <ListRender />
+        <ConditionalRender />
       </div>
     </div>
   );
