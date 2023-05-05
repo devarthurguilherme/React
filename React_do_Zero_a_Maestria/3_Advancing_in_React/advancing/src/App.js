@@ -9,6 +9,10 @@ import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
 import Fragments from './components/Fragments';
 import Children from './components/Children';
+import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessage from './components/ChangeMessage';
+
 //State
 import {useState} from 'react';
 function App() {
@@ -19,6 +23,15 @@ function App() {
     {id: 114, brand:"Chevrolet", km: 0, newCar: true, color: "gray"},
     {id: 177, brand:"volkswagem", km: 120, newCar: false, color: "red"}
   ];
+
+  function showMessage() {
+    console.log("Show Message here!");
+  }
+
+  const [message, setMessage] = useState("");
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
 
   return (
     <div className="App">
@@ -58,6 +71,7 @@ function App() {
         {/*Arrays of Objects with Loop Map*/}
         {cars.map((car) => (
           <CarDetails 
+            key={car.id}
             brand={car.brand}
             km={car.km}
             newCar={car.newCar}
@@ -73,6 +87,12 @@ function App() {
         <Children myValue2="Testing Prop Value2">
           <p>This is my 2º test!</p>
         </Children>
+        {/*Funtions in Props*/}
+        <ExecuteFunction handleShowMessage={showMessage} />
+        {/*State Lift*/}
+        <Message message={message}/>
+        <ChangeMessage handleMessage={handleMessage}/>
+
       </div>
     </div>
   );
