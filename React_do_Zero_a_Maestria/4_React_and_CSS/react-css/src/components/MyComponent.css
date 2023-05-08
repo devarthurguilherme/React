@@ -1,0 +1,14 @@
+h2 {
+    color: red;
+}
+
+p {
+    color: blue;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.my-comp-paragraph {
+    background-color: gold;
+    color: red;
+}
