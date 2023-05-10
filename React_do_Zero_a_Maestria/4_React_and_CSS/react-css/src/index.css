@@ -9,3 +9,15 @@
 html {
   font-size: 62.5%;
 }
+
+.redTitle {
+  color: white;
+  background-color: red;
+  padding: 1.5rem;
+}
+
+.title {
+  color: white;
+  background-color: blue;
+  padding: 1.5rem;
+}
