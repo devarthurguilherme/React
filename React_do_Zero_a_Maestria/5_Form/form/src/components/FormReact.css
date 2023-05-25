@@ -1,0 +1,16 @@
+.container-form {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid blue;
+    text-align: left;
+}
+
+.container-form__input-box {
+    display: block;
+    margin-top: 10px;
+}
+
+textarea, select {
+    display: block;
+    margin-top: 10px;
+}
