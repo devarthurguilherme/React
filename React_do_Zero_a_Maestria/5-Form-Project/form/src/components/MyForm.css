@@ -1,0 +1,14 @@
+.Form-Container {
+    width: 50rem;
+    margin: 0 auto;
+}
+
+form {
+    width: 100%;
+    text-align: left;
+}
+
+input, textarea, select {
+    display: block;
+    margin-top: 1rem;
+}
