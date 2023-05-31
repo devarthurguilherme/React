@@ -6,7 +6,7 @@ const MyForm = ({user}) => {
     const [name, setName] = useState(user ? user.name : "");
     const [email, setEmail] = useState(user ? user.email : "");
     const [bio, setBio] = useState(user ? user.bio : "");
-    const [role, setRole] = useState(user ? user.role : "");
+    const [role, setRole] = useState(user ? user.role    : "");
 
     const handleName = (e) => {
         setName(e.target.value);
