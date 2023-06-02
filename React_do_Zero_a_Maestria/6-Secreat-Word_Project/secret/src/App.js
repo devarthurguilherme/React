@@ -1,7 +1,9 @@
 /*CSS*/
 import './App.css';
 /*Components*/
-import StartScreen from './components/StartScreen'
+import StartScreen from './components/StartScreen';
+import Game from './components/Game';
+import GameOver from './components/GameOver';
 /*Hooks*/
 import {useCallback, useState, useEffect} from 'react';
 /*Data*/
@@ -14,12 +16,34 @@ const stages = [
 ];
 
 function App() {
-  const [gameStage, setGameStage] = useState(stages[0].name)
-//2:40
+  const [gameStage, setGameStage] = useState(stages[0].name);
+  const [words] = useState(wordsList);
 
+  const [pickedWord, setPickedWorld] = useState(""); 
+  const [pickedCategory, setPickedCategory] = useState(""); 
+  const [leters, setLetters] = useState("");
+
+  //Starts the Secret Word Game
+  const startGame = () => {
+    setGameStage(stages[1].name);
+  }
+
+  //Verify the Letter Input
+  const verifyLetter = () => {
+    setGameStage(stages[2].name);
+  }
+
+  //Retry the Game
+  const retry = () => {
+    setGameStage(stages[0].name);
+  }
+
+  console.log(words)
   return (
     <div className="App">
-     <StartScreen />
+     {gameStage === 'start' && <StartScreen startGame={startGame}/>}
+     {gameStage === 'game' && <Game verifyLetter={verifyLetter}/>}
+     {gameStage === 'end' && <GameOver retry={retry} />}
     </div>
   );
 }
