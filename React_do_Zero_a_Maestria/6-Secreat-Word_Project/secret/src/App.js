@@ -21,11 +21,41 @@ function App() {
 
   const [pickedWord, setPickedWorld] = useState(""); 
   const [pickedCategory, setPickedCategory] = useState(""); 
-  const [leters, setLetters] = useState("");
+  const [letters, setLetters] = useState([]);
+
+  const pickedWordAndCategory = () => {
+    //Pick a random category
+    const categories = Object.keys(words);
+    const category = categories[Math.floor(Math.random() * Object.keys(categories).length)];
+  
+    console.log(category);
+
+    //Pick a random word
+    const word = words[category][Math.floor(Math.random() * words[category].length)];
+    console.log(word);
+
+    return { word, category };
+
+  }
 
   //Starts the Secret Word Game
   const startGame = () => {
-    setGameStage(stages[1].name);
+
+  const { word, category } = pickedWordAndCategory();
+   
+  //Creating Array of Letters
+  let wordLetters = word.split("");
+  wordLetters = wordLetters.map((l) => l.toLowerCase());
+
+  console.log(wordLetters);
+  console.log( word, category);
+
+  // Fill States
+  setPickedWorld(word);
+  setPickedCategory(category);
+  setLetters(letters);
+
+  setGameStage(stages[1].name);
   }
 
   //Verify the Letter Input
@@ -37,6 +67,7 @@ function App() {
   const retry = () => {
     setGameStage(stages[0].name);
   }
+
 
   console.log(words)
   return (
