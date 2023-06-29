@@ -34,6 +34,106 @@
       "name": "BONÉ",
       "price": "44",
       "id": 7
+    },
+    {
+      "name": "mouse",
+      "price": "60",
+      "id": 8
+    },
+    {
+      "name": "vela",
+      "price": "10",
+      "id": 9
+    },
+    {
+      "name": "suport monitor",
+      "price": "140",
+      "id": 10
+    },
+    {
+      "name": "tv",
+      "price": "70",
+      "id": 11
+    },
+    {
+      "name": "tv",
+      "price": "70",
+      "id": 12
+    },
+    {
+      "name": "computer",
+      "price": "1200",
+      "id": 13
+    },
+    {
+      "name": "tower",
+      "price": "400",
+      "id": 14
+    },
+    {
+      "name": "backpack",
+      "price": "20",
+      "id": 15
+    },
+    {
+      "name": "backpack",
+      "price": "20",
+      "id": 16
+    },
+    {
+      "name": "backpack",
+      "price": "20",
+      "id": 17
+    },
+    {
+      "name": "chair",
+      "price": "29",
+      "id": 18
+    },
+    {
+      "name": "support",
+      "price": "33",
+      "id": 19
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 20
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 21
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 22
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 23
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 24
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 25
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 26
+    },
+    {
+      "name": "suport 2",
+      "price": "44",
+      "id": 27
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": 2,
+      "name": "Calça vermelha",
+      "price": 90
+    },
+    {
+      "id": 3,
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "name": "Arthur",
+      "price": "20",
+      "id": 4
+    },
+    {
+      "name": "Carro",
+      "price": "34",
+      "id": 5
+    },
+    {
+      "name": "capa",
+      "price": "12",
+      "id": 6
+    },
+    {
+      "name": "BONÉ",
+      "price": "44",
+      "id": 7
+    }
+  ]
+}
