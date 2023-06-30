@@ -13,6 +13,9 @@ export const useFetch = (url) => {
     //loading
     const [loading, setLoading] = useState(false);
 
+    // Trying Erros
+    const [error, setError] = useState(null)
+
 
 
     const httpConfig = (data, method) => {
@@ -35,11 +38,21 @@ export const useFetch = (url) => {
 
             setLoading(true);
 
-            const res = await fetch(url);
+            try {
 
-            const json = await res.json();
+                const res = await fetch(url);
 
-            setData(json);
+                const json = await res.json();
+        
+                setData(json);
+
+            } catch (error) {
+
+                console.log(error);
+
+                setError("There was some erro to load data!");
+
+            };
 
             setLoading(false);
         };
@@ -66,5 +79,5 @@ export const useFetch = (url) => {
 
     }, [config, method, url]);
 
-    return { data, httpConfig, loading };
+    return { data, httpConfig, loading, error };
 }
