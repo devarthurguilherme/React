@@ -35,12 +35,11 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />
-      }
+      },
       // 5 - nested routes
       {
         path: "/contact/:id",
-        element: <ContactDetails/>
-        //18:21
+        element: <ContactDetails/>,
       }
     ]
   }
