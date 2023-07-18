@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 //1 - Setting router
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Home from "./routes/Home.jsx";
 import Contact from "./routes/Contact.jsx";
 import ErrorPage from './routes/ErrorPage.jsx';
@@ -36,10 +36,16 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact />
       },
-      // 5 - nested routes
+      // 5 - nested routes - dynamic routes
       {
         path: "/contact/:id",
         element: <ContactDetails/>,
+      },
+
+      //7 - Navigate to Pages there are not
+      {
+        path: "oldcontact",
+        element: <Navigate to="/contact"/>
       }
     ]
   }
