@@ -1,26 +1,33 @@
+import Message from './Message';
+
 import { useState } from "react";
 
 function App () {
-  const [isVisible, setVisible] = useState(false);
-  const [initial, setInitial] = useState(0);
+  //const [firstName, setFirstName] = useState('');
+  //const [lastName, setLastName] = useState('');
+  //const [person, setPerson] = useState({
+    //firstName: '',
+    //lastName: '',
+  //})
 
-  const handleVisibility = () => {
-    setVisible(true);
-    console.log(isVisible);
-    setInitial((initial) + 1);
-  };
+  const [drink, setDrink] = useState({
+    title: "American",
+    price: 5
+  })
 
-  const handleReset = () => {
-    setInitial(0);
+  const handleClick = () => {
+    console.log("handleClick here!");
+    
+    setDrink({...drink, price: 6});
   }
-
   return (
     <div>
-      <button onClick={handleVisibility}>Button</button>
-      <button  onClick={handleReset}>reset paragraph</button>
-      <p>{initial}</p>
+      <p>
+        {drink.title} {drink.price}
+      </p>
+      <button onClick={handleClick}>Click me</button>
     </div>
-  )
+  );
 };
 
 export default App;
