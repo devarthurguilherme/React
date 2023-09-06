@@ -3,6 +3,9 @@ import Message from './Message';
 import { useState } from "react";
 import produce from 'immer';
 
+import NavBar from './components/NavBar';
+import Cart from './components/Cart';
+
 function App () {
   //const [firstName, setFirstName] = useState('');
   //const [lastName, setLastName] = useState('');
@@ -47,12 +50,17 @@ function App () {
     }));
     
   };
+
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+
   return (
     <div>
       <p>
         {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
       </p>
       <button onClick={handleClick3}>Click me</button>
+      <NavBar cartItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])}/>
     </div>
   );
 };
