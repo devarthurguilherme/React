@@ -1,12 +1,15 @@
 import { useState } from "react";
 import produce from 'immer';
 
-import NavBar from './components/NavBar';
-import Cart from './components/Cart';
-import ExpandableText from './components/ExpandableText';
-import TestPropsHere from './components/TestPropsHere';
-import Form from "./components/Form";
-
+//import NavBar from './components/NavBar';
+//import Cart from './components/Cart';
+//import ExpandableText from './components/ExpandableText';
+//import TestPropsHere from './components/TestPropsHere';
+//import Form from "./components/Form";
+import ExpenseTracker from "./components/expense-tracker/components/ExpenseTracker";
+import ExpenseFilter from "./components/expense-tracker/components/ExpenseFilter";
+import ExpenseForms from "./components/expense-tracker/components/ExpenseForms";
+import categories from "./components/expense-tracker/categories";
 
 function App () {
   //const [firstName, setFirstName] = useState('');
@@ -94,11 +97,23 @@ function App () {
   const [arthur, setArthur] = useState("arthur")
   const handleSetArthur = () => {
     setArthur("Guilherme");
-  }
+  };
+
+  const [expenses, setExpenses] = useState([
+    {id: 1, description: 'aaa', amount: 10, category: 'Utilities'},
+    {id: 2, description: 'bbb', amount: 10, category: 'Utilities'},
+    {id: 3, description: 'ccc', amount: 10, category: 'Utilities'},
+    {id: 4, description: 'ddd', amount: 10, category: 'Utilities'},
+  ]);
+
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const visibleExpenses = selectedCategory 
+    ? expenses.filter(e => e.category === selectedCategory)
+   : expenses; 
 
   return (
     <div>
-      <p>
+      {/*<p>
         {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
       </p>
       <button onClick={handleClick3}>Click me</button>
@@ -108,7 +123,14 @@ function App () {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quaerat suscipit sapiente veniam quo, recusandae quos ullam quas ut perferendis, porro officiis, deserunt dicta expedita! Accusamus architecto eum itaque similique provident, mollitia veritatis molestias eius asperiores. Esse suscipit quis aliquam magni, porro ad soluta, earum officiis et maiores, perspiciatis doloremque eveniet. Nobis repellendus culpa esse voluptatum enim doloremque veritatis recusandae deleniti sapiente consequuntur numquam quasi animi accusantium corporis, eum quas ab aperiam inventore nostrum iure laboriosam quia possimus. Magni, iusto sunt iste minima ipsa ipsam! Odit fuga numquam sapiente quaerat et minus assumenda qui, maiores mollitia vero harum! Eum, commodi!
       </ExpandableText>
       <TestPropsHere arthur={arthur}/>
-      <Form />
+      <Form />*/}
+      <div className="mb-3">
+        <ExpenseForms />
+      </div>
+      <div className="mb-3">
+        <ExpenseFilter onSelectCategory={category => setSelectedCategory(category)}/>
+      </div>
+      <ExpenseTracker expenses={visibleExpenses} onDelete={(id) => setExpenses(expenses.filter(e => e.id !== id))}/>
     </div>
   );
 };
