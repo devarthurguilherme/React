@@ -46,32 +46,46 @@ function App() {
     setFunctionText("it Changed now!");
   };
 
+  const [myName, setMyName] = useState("Arthur");
+  const [numberTest, setNumberTest] = useState(1);
+
+  const changeNumber = () => {
+    //Previous State
+    setNumberTest((prevNumber) => prevNumber + 1);
+    setNumberTest((prevNumber) => prevNumber + 1);
+    
+  }
+  // 11 min
   return (
     <>
-    <h2>Props</h2>
-     <Car brand={brand}/>
-     <h2>useRef</h2>
-     <div>
-      <input 
-        ref={inputRef}
-        type="text" 
-      />
-        <button onClick={focusInput}>InputFocus</button>
+      <h2>Props</h2>
+      <Car brand={brand}/>
+      <h2>useRef</h2>
+      <div>
+        <input 
+          ref={inputRef}
+          type="text" 
+        />
+          <button onClick={focusInput}>InputFocus</button>
 
-        <p ref={changeColorParagraph}>Hello! this paragraphy will change color when you click in this button!</p>
-        <button onClick={changeColor}>Change Color</button>
-     </div>
-     <div>
-      <p>Buttons Clicks {count}</p>
-      <button onClick={countClicks}>Count</button>
-     </div>
-    <h2>Events</h2>
-    <p>This text is used in {text}</p>
-    <button onClick={handleChangeText}>Event</button>
+          <p ref={changeColorParagraph}>Hello! this paragraphy will change color when you click in this button!</p>
+          <button onClick={changeColor}>Change Color</button>
+      </div>
+      <div>
+        <p>Buttons Clicks {count}</p>
+        <button onClick={countClicks}>Count</button>
+      </div>
+      <h2>Events</h2>
+      <p>This text is used in {text}</p>
+      <button onClick={handleChangeText}>Event</button>
 
-    <h2>Events like Props</h2>
-    <p> Here, the button inside Child has to change this next word: {functionText}</p>
-    <Child handleFunctionText={handleFunctionText}/>
+      <h2>Events like Props</h2>
+      <p> Here, the button inside Child has to change this next word: {functionText}</p>
+      <Child handleFunctionText={handleFunctionText}/>
+      <p>My name is: {myName}</p>
+      <button onClick={() => {setMyName("Arthur Guilherme")}}>Full Name</button>
+      <p>Number to test state hook here: {numberTest}</p>
+      <button onClick={changeNumber}>Change Number</button>
     </>
   )
 }
