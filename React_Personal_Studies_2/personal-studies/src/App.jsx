@@ -54,7 +54,7 @@ function App() {
     setNumberTest((prevNumber) => prevNumber + 1);
     setNumberTest((prevNumber) => prevNumber + 1);
     
-  }
+  };
   // 11 min
   return (
     <>
@@ -86,6 +86,9 @@ function App() {
       <button onClick={() => {setMyName("Arthur Guilherme")}}>Full Name</button>
       <p>Number to test state hook here: {numberTest}</p>
       <button onClick={changeNumber}>Change Number</button>
+      <h2>Inputs</h2>
+      <h3>My name is: {myName}</h3>
+      <input type="text" value={myName} onChange={e => setMyName(e.target.value)}/>
     </>
   )
 }
