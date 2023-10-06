@@ -1,7 +1,6 @@
 //Chakra UI Elements
-
-//Components
 import { Flex } from "@chakra-ui/react";
+//Components
 import NavMobile from "./components/NavMobile";
 import SideBar from "./components/SideBar";
 
