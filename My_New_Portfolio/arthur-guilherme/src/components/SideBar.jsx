@@ -42,7 +42,7 @@ const SideBar = () => {
         >
         </IconButton>
       </Flex>
-      <NavItems navSize={navSize} icon={FiHome} title={"Dashboard"}/>
+      <NavItems navSize={navSize} icon={FiHome} title={"Dashboard"} description=""/>
       <NavItems navSize={navSize} icon={FiCalendar} title={"Calendar"} active/>
       <NavItems navSize={navSize} icon={FiUser} title={"Clients"}/>
       <NavItems navSize={navSize} icon={IoPawOutline} title={"Animals"}/>

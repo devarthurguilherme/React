@@ -1,7 +1,7 @@
-import { Flex, Icon, Link, Menu, MenuButton, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Flex, Icon, Link, Menu, MenuButton, MenuList, Text } from '@chakra-ui/react'
+import NavHoverBox from "./NavHoverBox"
 
-const NavItems = ({ navSize, title, icon, active }) => {
+const NavItems = ({ navSize, title, icon, active, description }) => {
   return (
     <Flex
         mt={30}
@@ -26,6 +26,15 @@ const NavItems = ({ navSize, title, icon, active }) => {
                     </Flex>
                 </MenuButton>
             </Link>
+            <MenuList
+                py={0}
+                border={"none"}
+                w={200}
+                h={200}
+                ml={5}
+            >
+                <NavHoverBox title={title} icon={icon} description={description}/>
+            </MenuList>
         </Menu>
     </Flex>
   )
